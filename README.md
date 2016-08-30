@@ -1,15 +1,15 @@
 # LabelRankingLearning
-This project includes two state-of-the-art label ranking algorithms, i.e., label ranking with random forest and Gaussian mixture model respectively
+This project includes two state-of-the-art label ranking algorithms, i.e., label ranking with random forest (RF-LR) and Gaussian mixture model (LR-GMM) respectively
 
 # References
 [1] Yangming Zhou, Yangguang Liu, Xia-Zhi Gao and Guoping Qiu, "A label ranking method based on Gaussian mixture model",Knowledge-Based Systems , 2014, 72, 108 - 113, http://www.sciencedirect.com/science/article/pii/S0950705114003293.
 
 [2] Yangming Zhou and Guoping Qiu, "Random Forest for Label Ranking",2016, http://arxiv.org/abs/1608.07710.
 
+#Important note: Please make sure that the above paper is cited whenever our code is used in your research.
+
 # Datasets
 Label ranking datasets consist of 16 semisynthetic datasets and 5 realworld datasets, more detail see DatasetInfo.txt.
-
-#Important note: Please make sure that the above paper is cited whenever our code is used in your research.
 
 Our algorithm random forest for label ranking is implemented in Matlab Platform (MATLAB 2014b). For a more detailed description of the RF-LR algorithm, please refer to the original paper.
 
