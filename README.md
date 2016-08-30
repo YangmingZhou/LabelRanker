@@ -1,4 +1,4 @@
-# LabelRankingLearning
+# LabelRanker
 This project includes two state-of-the-art label ranking algorithms, i.e., label ranking with random forest (RF-LR) and Gaussian mixture model (LR-GMM) respectively
 
 # References
