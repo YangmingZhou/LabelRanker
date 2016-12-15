@@ -30,6 +30,7 @@ NumTrees=50 ;                              % Number of decision trees in the ran
 MaxDepth =8;                                % Maximum depth of the decidion tree
 DirectoryTrees='RandomTrees';        % Directory to store the random trees.
 DirectoryResults='Results.06';          % Directory to store the experimental results
+DirectoryData='./data';                % Data directory
 DataFlag=0;                                   % Indicate RealWorldData(1) or SemiSyntheticData(0)
 IndexDataset=9;                             % Index of current dataset
 IndicateTime=datestr(now, 30);
@@ -48,7 +49,7 @@ end
 
 % Load the data
 fprintf('Strart loading the specificed dataset...\n')
-loadDatasetInfo(DataFlag);
+loadDatasetInfo(DataFlag, DirectoryData);
 load ('DatasetInfo.mat');                                                              % Statistical information related to each dataset
 NumDatasets=length(DatasetInfo);                                               % Total number of datasets
 NumLabels=DatasetInfo(IndexDataset).numLabels;                        % Number of class labels;
@@ -59,7 +60,7 @@ fprintf('Current dataset is %s\n', NameDataset);
 if DataFlag==1
     dataset=textread(NameDataset,'','delimiter',',');
 elseif DataFlag==0
-    dataset=xlsread(NameDataset);
+    dataset=xlsread(strcat(DirectoryData, '/', NameDataset));
 else
     fprintf('DataFlag is wrong!');
 end

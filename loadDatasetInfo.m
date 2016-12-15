@@ -1,15 +1,16 @@
-function loadDatasetInfo(DataFlag)
+function loadDatasetInfo(DataFlag, DataDirectory)
 % Dataset Statistical Information
 % Writen by Yangming Zhou, 17 July 2015
 
+DataFlag=0
 
 % Indicate RealWorldData or SemiSyntheticData
 if DataFlag==1
     DataType='RealWorldData';
-    file=dir('/home/yangming/Matlab2014b/bin/glnxa64/workspace/LabelRanking/RFLR/*.csv'); 
+    file=dir(strcat(DataDirectory,'/*.csv'));
 else
     DataType='SemiSyntheticData';
-    file=dir('/home/yangming/Matlab2014b/bin/glnxa64/workspace/LabelRanking/RFLR/*.xls'); 
+    file=dir(strcat(DataDirectory,'/*.xls'));
 end
 
 if strcmp(DataType, 'RealWorldData')==1 % Realworld data
