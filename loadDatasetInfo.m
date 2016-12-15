@@ -2,8 +2,6 @@ function loadDatasetInfo(DataFlag, DataDirectory)
 % Dataset Statistical Information
 % Writen by Yangming Zhou, 17 July 2015
 
-DataFlag=0
-
 % Indicate RealWorldData or SemiSyntheticData
 if DataFlag==1
     DataType='RealWorldData';

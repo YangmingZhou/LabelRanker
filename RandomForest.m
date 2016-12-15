@@ -13,7 +13,7 @@ clear;
 close all;
 %rng('default');     % Fix random seed
 
-fprintf('Strart initializing...\n')
+fprintf('Start initializing...\n')
 global Node 
 global MaxDepth;
 global DirectoryTrees;
@@ -48,7 +48,7 @@ if ~exist(DirectoryResults, 'dir')
 end
 
 % Load the data
-fprintf('Strart loading the specificed dataset...\n')
+fprintf('Start loading the specificed dataset...\n')
 loadDatasetInfo(DataFlag, DirectoryData);
 load ('DatasetInfo.mat');                                                              % Statistical information related to each dataset
 NumDatasets=length(DatasetInfo);                                               % Total number of datasets
@@ -99,7 +99,7 @@ for IndexRepetition=1:NumRepetitions
         [trainingFeatures, trainingLabels, trainingRankings, testingFeatures, testingLabels, testingRankings]=divideDataset(datasetFeatures, datasetLabels, datasetRankings, TestFold);
 
         %% Training Phase
-        fprintf('Strart generating trees...\n')
+        fprintf('Start generating trees...\n')
         for IndexTree=1:NumTrees
             Node=struct('node', [], 'depth', [], 'isLeaf', [], 'dimension', [], 'threshold', [], 'entropy', []); % Define a structure to store the information of each node.
             IndexNode=1;
@@ -113,7 +113,7 @@ for IndexRepetition=1:NumRepetitions
         end
 
         %% Parsing Phase
-        fprintf('Strart parsing random trees...\n')
+        fprintf('Start parsing random trees...\n')
         for IndexTree=1:NumTrees
             assignInstanceToTree(trainingFeatures(:, :, IndexTree), IndexTree)
             % displayTree(IndexTree); % Display the overall random tree
@@ -121,7 +121,7 @@ for IndexRepetition=1:NumRepetitions
         end
  
         %% Predicting Phase
-        fprintf('Strart predicting...\n');
+        fprintf('Start predicting...\n');
         NumTrainInstances=size(trainingRankings(:, :, 1), 1);
         NumTestInstances=size(testingFeatures, 1);                              % Number of testing instances
         PredictedRanking=zeros(NumTestInstances, NumLabels);           % Predicted ranking of each testing instance
